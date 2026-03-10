@@ -1,0 +1,946 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <title></title>
+    <style>
+        .cta-button:hover {
+            background-color: #F17D08 !important;
+        }
+
+        .im {
+            color: #525252 !important;
+        }
+        .payout-summary {
+              background-color: #f5f5f5;
+              display: flex;
+              min-width: 390px;
+              margin-left: auto;
+              margin-right: auto;
+              max-width: 480px;
+              width: 100%;
+              flex-direction: column;
+              overflow: hidden;
+              align-items: center;
+            }
+
+            .payout-summary__body {
+              background-color: #fff;
+              box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+              display: flex;
+              width: 100%;
+              max-width: 600px;
+              padding: 16px;
+              flex-direction: column;
+              align-items: stretch;
+            }
+
+            .payout-summary__header {
+              display: flex;
+              width: 100%;
+              padding-bottom: 16px;
+              flex-direction: column;
+              align-items: stretch;
+            }
+
+            .payout-summary__logo {
+              display: flex;
+              min-height: 63px;
+              width: 100%;
+              padding: 16px 32px;
+              flex-direction: column;
+              overflow: hidden;
+              align-items: center;
+            }
+
+            .payout-summary__logo-image {
+              display: flex;
+              min-height: 31px;
+              width: 125px;
+              max-width: 100%;
+            }
+
+
+
+            .payout-summary__amount-block {
+              margin-top: 8px;
+              padding: 16px;
+              border-radius: 8px;
+              background-color: #faf8f5;
+            }
+
+            .payout-summary__amount {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin: 0;
+            }
+
+
+
+            .service-section {
+              margin-top: 8px;
+              width: 100%;
+              padding-bottom: 16px;
+            }
+
+
+
+            .service-section__orders {
+              background-color: #faf8f5;
+              padding: 0 16px;
+              margin: 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            .service-section__divider {
+              background-color: #ebe8e3;
+              height: 1px;
+              width: 100%;
+              margin: 8px 0;
+            }
+
+
+
+            .service-section__data {
+              margin: 0;
+              display: grid;
+              grid-template-columns: 1fr 75px;
+              gap: 4px;
+              align-items: center;
+            }
+
+
+
+            .service-section__earnings,
+            .service-section__deductions {
+              background-color: #faf8f5;
+              padding: 16px;
+            }
+
+            .service-section__total {
+              border-radius: 0 0 8px 8px;
+              background-color: #faf8f5;
+              padding: 8px 16px;
+            }
+
+            .payout-summary__totals {
+              border-radius: 8px;
+              background-color: #faf8f5;
+              margin-top: 8px;
+              padding: 16px;
+            }
+
+
+
+            .footer-links {
+              display: flex;
+              gap: 16px;
+            }
+
+            .footer-links__item {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              width: 100px;
+            }
+
+            .footer-links__icon {
+              aspect-ratio: 1;
+              object-fit: contain;
+              object-position: center;
+              width: 32px;
+            }
+
+            .footer-links__text {
+              margin-top: 8px;
+            }
+
+            .payout-summary__footer-text {
+              margin-top: 16px;
+            }
+
+            .payout-summary__copyright {
+              margin-top: 16px;
+            }
+
+            .service-section-label{
+                padding-left: 16px;  padding-top: 1px;width: 100%; display: block; text-align: left;color: #02274D; font: 400 16px Arial; line-height: 24px; word-wrap: break-word;
+            }
+            .service-section-label-subscription{
+                padding-left: 16px;  padding-top: 1px;width: 70%; display: block; text-align: left;color: #02274D; font: 400 16px Arial; line-height: 24px; word-wrap: break-word;
+
+            }
+            .service-section-label-subscription-fonda{
+                padding: 1px 0 16px 16px; width: 70%; display: block; text-align: left;color: #02274D; font: 400 16px Arial; line-height: 24px; word-wrap: break-word;
+
+            }
+            .service-section-label-subscription-fonda-empty{
+                padding: 0px 0 16px 16px; width: 70%; display: block; text-align: left;color: #02274D; font: 400 16px Arial; line-height: 24px; word-wrap: break-word;
+
+            }
+            .service-section-label-earning{
+                padding-left: 16px;  padding-top: 1px;width: 70%; display: block; text-align: left;color: #02274D; font: 700 16px Arial; line-height: 24px; word-wrap: break-word;
+            }
+            .service-section-net-total {
+                padding: 1px 0px 16px 16px;
+                text-align: left;
+                color: #02274D;
+                font: 700 16px Arial;
+                width: 50%;
+                line-height: 24px;
+                word-wrap: break-word
+            }
+            .service-section-net-total-value {
+                padding-left: 22%;
+                text-align: left;
+                color: #02274D;
+                font: 700 16px Arial;
+                width: 50%;
+                line-height: 24px;
+                word-wrap: break-word
+            }
+
+
+             .service-section-value{
+                padding-left: 22%; text-align: left;color: #02274D; font: 400 16px Arial;line-height: 24px; word-wrap: break-word;
+            }
+            .service-section-value-fondashare{
+                padding-left: 22%; text-align: left;color: #02274D; width:50%; font: 400 16px Arial;line-height: 24px; word-wrap: break-word;
+            }
+            .service-section-value-earning{
+                padding-left: 22%; text-align: left;color: #02274D; font: 700 16px Arial;width: 50%;line-height: 24px; word-wrap: break-word;
+            }
+
+            .hr-tag{
+                width: 90%; margin-left: 5%; padding-right: 100%; opacity: 0.3;
+            }
+            .hr-tag-td{
+                padding-right: 1rem; padding-left:1rem; opacity: 0.3
+            }
+            .hr-tag-td-deduction{
+                padding-right: 1rem; padding-left:1rem; padding-top: 16px; opacity: 0.3
+            }
+
+            .hr-tag-td-deduction-summary{
+                padding-right: 1rem; padding-left:1rem; padding-top: 12px; opacity: 0.3
+            }
+
+            .hr-tag-fonda{
+                width: 90%; margin-left: 5%; padding-right: 100%; opacity: 0.3;margin-top: 12px;
+            }
+            .hr-tag-deduction{
+                width: 90%; margin-left: 5%; padding-right: 100%; opacity: 0.3; margin-top: 16px;
+            }
+            .hr-tag-deduction-summary{
+                width: 90%; margin-left: 5%; padding-right: 100%; opacity: 0.3; margin-top: 12px;
+            }
+        @media (max-width: 768px){
+            .service-section-value-fondashare{
+                padding-left: 21%; text-align: left;color: #02274D; width:50%; font: 400 16px Arial;line-height: 24px; word-wrap: break-word;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .report-body,
+            .report-header,
+            .report-title,
+            .report-subtitle,
+            .report-content,
+            .data-block,
+            .cta-button,
+            .report-footer,
+            .footer-links,
+            .footer-language,
+            .footer-copyright {
+                max-width: 100%;
+            }
+
+            .logo-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .report-footer {
+                padding: 0 20px;
+            }
+
+            .footer-link {
+                white-space: initial;
+            }
+        }
+    </style>
+</head>
+
+<body data-merchantlan="sp" class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f9f9f9;color: #02274D;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+
+    <div class="weekly-report" style="background-color: #f5f5f5; min-width: 390px; padding: 0 8px; display: table; margin: 0 auto;">
+        <div class="report-body" style="background-color: #fff; box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); width: 600px; padding: 16px 0 0; display: table-cell;">
+            <div class="report-header" style="width: 100%; padding-bottom: 3px; ">
+                <div class="logo-container" style="min-height: 63px; padding: 16px 32px;  text-align: center;">
+                    <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/fonda_logo_emails.png" alt="Company logo" style="aspect-ratio: 4.03; object-fit: contain; object-position: center; width: 125px; max-width: 100%;" width="125">
+                </div>
+                <h1 class="report-title" style=" width: 100%; color: #02274D; text-align: center; font: 400 32px Arial;"> {{"Your payment from Fonda is on the way" | translate(footer.language) }}</h1>
+            </div>
+
+            <section class="payment-period" style="color: #02274D; text-align: center; font-family: Arial; font-size: 16px; font-weight: 400; line-height: 24px; align-self: center; margin-top: 8px;">
+                <strong>{{merchantName}},</strong> {{"this payment covers transactions from:" | translate(footer.language)}}
+                <br>
+                <span>{{report.startDate}} - {{report.endDate}}.*</span>
+            </section>
+            </p>
+            <div class="report-content" style="margin-top: 8px; width: 100%; padding: 16px 0 0; display: table;">
+
+                <table style="width: 94%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="padding: 25px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px; text-align: center;">
+                                    <h2 class="data-label" style="color: #02274D; font: 400 16px Arial; margin: 0;">{{"Payout Amount" | translate(footer.language) }}</h2>
+                                    <table align="center">
+                                        <tr>
+                                            <td class="data-number" style="color: #068A6B; font: 700 24px Arial; padding-top: 10px; text-align: center;">
+                                                ${{ "{:,.2f}".format(report.netPayout) }}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <section style="font-family: Arial; font-size: 16px; font-weight: 400; padding: 0px 10px;">
+                <p class="processing-date" style="margin-top: 16px; width: 100%; font-size: 16px; text-align: center; line-height: 24px;">
+                    {{"Your payout will be processed on" | translate(footer.language) }}
+                    <br>
+                    {{report.payoutDate}}. **
+                  </p>
+                </section>
+                {# Doordash Section #}
+                {% if report.report.doordash_summary_report.total != 0 %}
+                <section>
+                    <table style="width: 94%; border-collapse: collapse; margin: 0 auto; background-color: #f9f7f5;; border-radius: 8px;">
+                        <tr>
+                            <td><div style="padding-left: 16px;  ; display: block; text-align: left;"><h2 style="color: #02274D;">DoorDash</h2></div></td>
+
+                        </tr>
+                        <tr>
+                            <td style = "padding-left: 16px; padding-top: 1px ; display: block; text-align: left;color: #02274D; font: 400 16px Arial"> {{"Number of Orders" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;"> {{ report.report.doordash_summary_report.total_orders }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #A3A3A3; font: 700 16px Arial; font-size: 14px; padding-left: 16px; padding-top: 16px;line-height: 21px;">
+                                {{ "EARNINGS" | translate(footer.language) }}
+                            </td>
+                        </tr>
+                        {% if report.report.doordash_summary_report.subTotal != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Subtotal" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.subTotal) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.Taxsubtotal != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tax Subtotal" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.Taxsubtotal) }} </td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.adjustment != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Adjsutment" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.adjustment) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.Tip != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tip" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.Tip) }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Earnings" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.total_earning) }}</td>
+                        </tr>
+
+                        <tr>
+                            <td style="color: #a3a3a3; font: 700 16px Arial; font-size: 14px; padding-left: 16px;line-height: 21px;word-wrap: break-word; padding-top: 16px">{{"DEDUCTIONS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.doordash_summary_report.Marketingfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Marketing Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.Marketingfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.Comission != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Commission" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.Comission) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.error_charge != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Error Charges" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.error_charge) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.comisson_tax_amount != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Commission Tax" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.comisson_tax_amount) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.refund_amount != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Refund" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.refund_amount) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.TabletSubscriptionFee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Other fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.TabletSubscriptionFee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.Storefronttransactionfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Transaction Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.Storefronttransactionfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.doordash_summary_report.Storefrontdelieveryfees != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Delivery Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.Storefrontdelieveryfees) }}</td>
+                        </tr>
+                        {% endif %}
+
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Deductions" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.total_deduction) }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td-deduction">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-net-total">{{"Net Total" | translate(footer.language) }}</td>
+                            <td class="service-section-net-total-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.doordash_summary_report.total) }}</td>
+                        </tr>
+                    </table>
+                </section>
+                {% endif %}
+                {# Grubhub Section #}
+
+                {% if report.report.grubhub_summary_report.total != 0 %}
+                <section style="margin-top: 40px">
+                    <table style="width: 94%; border-collapse: collapse; margin: 0 auto; background-color: #f9f7f5;; border-radius: 8px;">
+                        <tr>
+                            <td><div style="padding-left: 16px;  ; display: block; text-align: left;"><h2 style="color: #02274D;">GrubHub</h2></div></td>
+
+                        </tr>
+                        <tr>
+                            <td style = "padding-left: 16px; padding-top: 1px ; display: block; text-align: left;color: #02274D; font: 400 16px Arial; line-height: 24px;word-wrap: break-word">{{"Number of Orders" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;"> {{ report.report.grubhub_summary_report.total_orders }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #a3a3a3; font-weight: 700; font-size: 14px; padding-left: 16px; line-height: 21px;word-wrap: break-word;padding-top: 16px">{{"EARNINGS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.grubhub_summary_report.subTotal != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Subtotal" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.subTotal) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.TaxFee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tax Subtotal" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.TaxFee) }} </td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.Tip != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tips" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.Tip) }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Earnings" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;"> ${{ "{:,.2f}".format(report.report.grubhub_summary_report.total_earning) }}</td>
+                        </tr>
+
+                        <tr>
+                            <td style="color: #a3a3a3; font-weight: 700; font-size: 14px; padding-left: 16px;line-height: 21px; padding-top: 16px;word-wrap: break-word;">{{"DEDUCTIONS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.grubhub_summary_report.processingfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Processing Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.processingfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.commission != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Commission" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.commission) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.DeliveryCommission != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Delivery Commission" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.DeliveryCommission) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.servicefee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Service Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.servicefee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.deliveryfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Delivery Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.deliveryfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.TargetedPromotion != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Targeted Promotion" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.TargetedPromotion) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.grubhub_summary_report.MarketingFee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Marketing Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.MarketingFee) }}</td>
+                        </tr>
+                        {% endif %}
+
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Deductions" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.total_deduction) }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td-deduction">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-net-total">{{"Net Total" | translate(footer.language) }}</td>
+                            <td class="service-section-net-total-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.grubhub_summary_report.total) }}</td>
+                        </tr>
+                    </table>
+                </section>
+                {% endif %}
+
+                {% if report.report.ubereats_summary_report.total != 0 %}
+                {# Ubereats Section #}
+                <section style="margin-top: 40px">
+                    <table style="width: 94%; border-collapse: collapse; margin: 0 auto; background-color: #f9f7f5;; border-radius: 8px;">
+                        <tr>
+                            <td><div style="padding-left: 16px; display: block; text-align: left;"><h2 style="color: #02274D;">UberEats</h2></div></td>
+
+                        </tr>
+                        <tr>
+                            <td style = "padding-left: 16px; padding-top: 1px ; display: block; text-align: left;color: #02274D; font: 400 16px Arial;line-height: 24px;word-wrap: break-word;">{{"Number of Orders" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;"> {{ report.report.ubereats_summary_report.total_orders }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #a3a3a3; font-weight: 700; font-size: 14px; padding-left: 16px; padding-top: 16px;line-height: 21px; word-wrap: break-word">{{"EARNINGS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.ubereats_summary_report.TotalSaleIncRefund != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Subtotal" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.TotalSaleIncRefund) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.tax != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tax" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.tax) }} </td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.Tips != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tip" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.Tips) }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Earnings" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;"> ${{ "{:,.2f}".format(report.report.ubereats_summary_report.total_earning) }}</td>
+                        </tr>
+
+                        <tr>
+                            <td style="color: #a3a3a3; font-weight: 700; font-size: 14px; padding-left: 16px; padding-top: 16px;line-height: 21px; word-wrap: break-word">{{"DEDUCTIONS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.ubereats_summary_report.Marketplacefee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Marketplace Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.Marketplacefee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.promotions != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Promotions (incl Tax)" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.promotions) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.Marketplacefacilitatortax != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Marketplace Facilitator Tax" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.Marketplacefacilitatortax) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.Deliverynetworkfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Delivery Network Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.Deliverynetworkfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.Backupwithholdingtax != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Backup Withholding Tax" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.Backupwithholdingtax) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.Orderprocessingfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Order Processing Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:.2f}".format(report.report.ubereats_summary_report.Orderprocessingfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.ubereats_summary_report.Marketingfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Marketing Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.Marketingfee) }}</td>
+                        </tr>
+                        {% endif %}
+
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Deductions" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.total_deduction) }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td-deduction">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-net-total">{{"Net Total" | translate(footer.language) }}</td>
+                            <td class="service-section-net-total-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.ubereats_summary_report.total) }}</td>
+                        </tr>
+                    </table>
+                </section>
+                {% endif %}
+
+                {# Storefront Section #}
+                {% if report.report.storefront_summary_report.total != 0 %}
+                <section style="margin-top: 40px">
+                    <table style="width: 94%; border-collapse: collapse; margin: 0 auto; background-color: #f9f7f5;; border-radius: 8px;">
+                        <tr>
+                            <td><div style="padding-left: 16px;  ; display: block; text-align: left;"><h2 style="color: #02274D;">Storefront</h2></div></td>
+
+                        </tr>
+                        <tr>
+                            <td style = "padding-left: 16px; padding-top: 1px ; display: block; text-align: left;color: #02274D; font: 400 16px Arial;">{{"Number of Orders" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;"> {{ report.report.storefront_summary_report.total_orders }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #a3a3a3; font-weight: 700; font-size: 14px; padding-left: 16px; padding-top: 16px;line-height: 21px; word-wrap: break-word">{{"EARNINGS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.storefront_summary_report.subTotal != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Subtotal" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.subTotal) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.storefront_summary_report.tax != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Tax" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.tax) }} </td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.storefront_summary_report.staffTips != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Staff Tips" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.staffTips) }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Earnings" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;"> ${{ "{:.2f}".format(report.report.storefront_summary_report.total_earning) }}</td>
+                        </tr>
+
+                        <tr>
+                            <td style="color: #a3a3a3; font-weight: 700; font-size: 14px; padding-left: 16px; padding-top: 16px; line-height: 21px; word-wrap: break-word">{{"DEDUCTIONS" | translate(footer.language) }}</td>
+                        </tr>
+                        {% if report.report.storefront_summary_report.processingfee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Processing Fee" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.processingfee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.storefront_summary_report.commission != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Commission" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.commission) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.storefront_summary_report.squarefee != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Error Charges" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.squarefee) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.storefront_summary_report.refund_amount != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Refund" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.refund_amount) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.report.storefront_summary_report.promodiscount != 0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Promo Discounts" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.promodiscount) }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="service-section-label-earning">{{"Total Deductions" | translate(footer.language) }}</td>
+                            <td class="service-section-value-earning" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.total_deduction) }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="hr-tag-td-deduction">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-net-total">{{"Net Total" | translate(footer.language) }}</td>
+                            <td class="service-section-net-total-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.storefront_summary_report.total) }}</td>
+                        </tr>
+                    </table>
+                </section>
+                {% endif %}
+
+                {# Fonda Share #}
+                {% if report.report.fonda_summary_report.total_earning != 0 %}
+                <section style="margin-top: 40px">
+                    <table style="width: 94%; border-collapse: collapse; margin: 0 auto; background-color: #f9f7f5;; border-radius: 8px;">
+                        <tr>
+                            <td><div style="padding-left: 16px; padding-top:16px; padding-bottom: 8px; display: block; text-align: left; font: bold 14px Arial;color: #a3a3a3;line-height: 21px;">{{"FONDA SHARE" | translate(footer.language) }}</div></td>
+
+                        </tr>
+                        <tr>
+                            <td class="service-section-label">{{"Total Gross Sales" | translate(footer.language) }}</td>
+                            <td class="service-section-value-fondashare">${{ "{:,.2f}".format(report.report.fonda_summary_report.total_earning) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-label">{{"Share %" | translate(footer.language) }}</td>
+                            <td class="service-section-value-fondashare" style="min-width: 100px;">{{ report.report.fonda_summary_report.share }}%</td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-label">{{"Fonda Share" | translate(footer.language) }}</td>
+                            {% if report.report.fonda_summary_report.Revenue_share!=0 %}
+                            <td class="service-section-value-fondashare" style="min-width: 100px;">
+                                    $-{{ "{:,.2f}".format(report.report.fonda_summary_report.Revenue_share) }}
+                            </td>
+                            {% else %}
+                            <td class="service-section-value-fondashare" style="min-width: 100px;">
+                                    ${{ "{:,.2f}".format(report.report.fonda_summary_report.Revenue_share) }}
+                            </td>
+                            {% endif %}
+                        </tr>
+                        <tr><td class="service-section-label-subscription-fonda-empty"></td></tr>
+                    </table>
+                </section>
+                {% endif %}
+                {# Payout Summary #}
+                <section style="margin-top: 40px">
+                    <table style="width: 94%; border-collapse: collapse; margin: 0 auto; background-color: #f9f7f5;; border-radius: 8px;">
+                        <tr>
+                            <td><div style="padding-left: 16px; padding-top:16px; padding-bottom: 8px; display: block; text-align: left; font: bold 14px Arial;color: #a3a3a3;line-height: 21px;">{{"PAYOUT SUMMARY" | translate(footer.language) }}</div></td>
+
+                        </tr>
+                        <tr>
+                            <td style = "padding-left: 16px; padding-top: 1px ; display: block; text-align: left;color: #02274D; font: 400 16px Arial;">{{"Total Orders" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;"> {{ report.report.numberoforders }}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="hr-tag-td">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-label">{{"Net Earnings" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.report.total_all_earning) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-label">{{"Fonda Share" | translate(footer.language) }}</td>
+                            {% if report.report.fonda_summary_report.Revenue_share!=0 %}
+                            <td class="service-section-value" style="min-width: 100px;">
+                                    $-{{ "{:,.2f}".format(report.report.fonda_summary_report.Revenue_share) }}
+                            </td>
+                            {% else %}
+                            <td class="service-section-value" style="min-width: 100px;">
+                                    ${{ "{:,.2f}".format(report.report.fonda_summary_report.Revenue_share) }}
+                            </td>
+                            {% endif %}
+
+                        </tr>
+                        {% if report.subscriptionAdjustments !=0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Fonda Subscription" | translate(footer.language) }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.subscriptionAdjustments) }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if report.payoutAdjsutment !=0 %}
+                        <tr>
+                            <td class="service-section-label">{{"Payout Adjustment" | translate(footer.language) }} {{ '***' if report.payout_remarks else '' }}</td>
+                            <td class="service-section-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.payoutAdjsutment) }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td colspan="2" class="hr-tag-td-deduction-summary">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="service-section-net-total">{{"Net Payout" | translate(footer.language) }}</td>
+                            <td class="service-section-net-total-value" style="min-width: 100px;">${{ "{:,.2f}".format(report.netPayout) }}</td>
+                        </tr>
+                        {% if report.payout_remarks %}
+                        <tr>
+                            <td colspan="2" style="padding-left: 16px; padding-right: 16px; padding-bottom: 16px;">
+                                <div style="font: bold 14px Arial; color: #a3a3a3; line-height: 21px; padding-bottom: 4px;">
+                                    {{"PAYOUT NOTES" | translate(footer.language) }}
+                                </div>
+                                <p style="margin: 0; font-size: 14px; line-height: 18px;">
+                                    {{ '*** ' + (report.payout_remarks | translate(footer.language)) }}
+                                </p>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </section>
+            {# ========================================= #}
+                <section class="spreadsheet-notice" style="margin-top: 8px; width: 100%; padding: 16px 0; font-family: Arial; font-size: 16px; color: #02274D; font-weight: 400; text-align: center; line-height: 24px;">
+                  {{"Your full payout details are in the" | translate(footer.language) }}
+                  <br>
+                  <strong>{{"attached spreadsheet" | translate(footer.language) }}</strong>—{{"take a look" | translate(footer.language) }}!
+                </section>
+
+                <section style="font-family: Arial; font-size: 16px; font-weight: 400; padding: 0px 10px;">
+
+                  <p class="disclaimer-text" style="margin-top: 16px; width: 100%; padding: 16px 0; font-size: 14px; text-align: center; line-height: 18px;">
+                    * {{"The payout may include adjustments and error charges for orders that happened prior to this date range." | translate(footer.language) }}
+                    <br>
+                    <br>
+                    ** {{"Your payout may take 1-3 business days to arrive, depending on your bank" | translate(footer.language) }}
+                  </p>
+                </section>
+
+                <!-- footer there -->
+
+                <table  style="width: 100%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 24px 32px; background-color: #f5f5f5; color: #525252 !important; font: 400 14px/1 Arial; max-width: 600px;">
+                                <table style="width: 100%; border-spacing: 0;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 12%; padding-bottom: 16px;">
+                                                <div>
+                                                    <a href="{{footer.mifonda_support_number}}" style="text-decoration: none;">
+                                                        <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/phone-icon.png" 
+                                                             alt="company logo" width="29" style="display: block;">
+                                                    </a>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <a href="{{footer.mifonda_support_number}}" style="text-decoration: none; color: #525252;">
+                                                        {{"Contact" | translate(footer.language) }}<br>
+                                                        {{"Support" | translate(footer.language) }}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                            <td style="width: 50%; padding-bottom: 16px;">
+                                                <div>
+                                                    <a href="{{footer.dashboard_merchant_url}}" style="text-decoration: none;">
+                                                        <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/desktop+logo.png" 
+                                                             alt="desktop logo" width="32" style="display: block;">
+                                                    </a>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <a href="{{footer.dashboard_merchant_url}}" style="text-decoration: none; color: #525252;">
+                                                        {{"Merchant" | translate(footer.language) }}<br>
+                                                        {{"Portal" | translate(footer.language) }}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {% if footer.language == "es" %}
+                                    
+                               
+                                <p style="margin-top: 16px;">
+                                    Would you prefer this email in English? <a style=" color: #525252;" href="{{footer.mifonda_support_url}}">Click here</a> to send an email to support.
+                                </p>
+                                    
+                                {% else %}
+                                    
+                                <p style="margin-top: 16px;">
+                                    ¿Prefieres este correo en español? <a style=" color: #525252;" href="{{footer.mifonda_support_url}}">Haz clic aquí</a> para enviar un correo a soporte.
+                                </p>
+                                {% endif %}
+                                <p style="margin-top: 16px; color: #525252;">
+                                    © {{footer.current_year}} Fonda Technologies Inc. {{"All Rights Reserved" | translate(footer.language) }}
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+
+</html>

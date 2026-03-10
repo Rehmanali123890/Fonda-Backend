@@ -1,0 +1,52 @@
+{% extends "emails/order_base.html" %}
+{% block content %}
+
+    <div class="u-row-container" style="padding: 0px;background-color: transparent">
+        <div class="u-row"
+             style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+            <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <div class="u-col u-col-100"
+                     style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                    <div style="width: 100% !important;">
+                        <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                            <table class="content-table" style="font-family:'Cabin',sans-serif;" role="presentation"
+                                   cellpadding="0" cellspacing="0" width="100%" border="0">
+                                <tbody>
+                                <tr>
+                                    <td style="overflow-wrap:break-word;word-break:break-word;padding:33px 23px;font-family:'Cabin',sans-serif;"
+                                        align="left">
+
+                                        <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
+                                            <p style="font-size: 14px; line-height: 160%;"><span
+                                                    style="font-size: 18px;font-weight: 600; line-height: 28.8px;">Order Confirmed</span>
+                                            </p>
+                                        </div>
+                                        <div style="line-height: 160%; text-align: left;margin-top: 10px; word-wrap: break-word;">
+                                            <p style="font-size: 14px; line-height: 160%;"><span
+                                                    style="font-size: 17px; line-height: 28.8px;">Order #{{ order }}</span></p>
+                                            <p style="font-size: 14px; line-height: 160%;"><span
+                                                    style="font-size: 17px; line-height: 28.8px;">Hi {{ customer}}, Thank you for your order! </span>
+                                            </p>
+                                            <p style="font-size: 14px; line-height: 160%;"><span
+                                                    style="font-size: 17px; line-height: 28.8px;">Your Order #{{ order }} is confirmed. Here is the <a
+                                                    href="{{ tracking_url }}">tracking url</a> for your order.</span>
+                                            </p>
+                                              <p style="font-size: 14px; line-height: 160%;"><span
+                                                    style="font-size: 17px; line-height: 28.8px;">Click <a href="{{ receipt_url }}">here</a> to download the order receipt.</span>
+                                            </p>
+                                             <p style="font-size: 14px; line-height: 160%;"><span
+                                                    style="font-size: 17px; line-height: 28.8px;">Thanks</span>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

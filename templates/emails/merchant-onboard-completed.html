@@ -1,0 +1,77 @@
+{% extends "emails/base.html" %}
+{% block content %}
+
+    <div class="u-row-container" style="padding: 0px;background-color: transparent">
+        <div class="u-row"
+             style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #00a79d;">
+            <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+                <div class="u-col u-col-100"
+                     style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+                    <div style="width: 100% !important;">
+                        <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+                            <table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0"
+                                   cellspacing="0" width="100%" border="0">
+                                <tbody>
+                                <tr>
+                                    <td style="overflow-wrap:break-word;word-break:break-word;padding-bottom:20px;font-family:'Cabin',sans-serif;padding-bottom: 2.5em;"
+                                        align="left">
+                                        <img src="https://apptopus-data-prod.s3.us-west-1.amazonaws.com/images/logo2.png"
+                                             width="20%"
+                                             style="padding-left: 1.5em; padding-bottom: 1em;padding-top: 1.1em;"
+                                             alt="">
+                                        <h1 style="color:#fff;font-size:50px;padding-left: 0.7em;margin-top: -6px;padding-right: 0.7em;">
+                                            Welcome to fonda.</h1>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="u-row-container" style="padding: 0px;background-color: transparent">
+    <div class="u-row"
+         style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
+    <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
+    <div class="u-col u-col-100"
+         style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+    <div style="width: 100% !important;">
+    <div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
+    <!========Body Content start>
+    <table class="content-table" style="font-family:'Cabin',sans-serif;" role="presentation"
+           cellpadding="0" cellspacing="0" width="100%" border="0">
+        <tbody>
+        <tr>
+            <td style="overflow-wrap:break-word;word-break:break-word;padding:33px 55px;font-family:'Cabin',sans-serif;"
+                align="left">
+
+                <div style="line-height: 160%; text-align: center; word-wrap: break-word;">
+                    <p style="font-size: 14px; line-height: 160%;"><span
+                            style="font-size: 18px; line-height: 35.2px;">Hello {{ data['pocname'] }}, </span></p>
+                 <p style="font-size: 14px; line-height: 160%;"><span
+                                                style="font-size: 18px; line-height: 28.8px;">
+                                            Thank you for signing up with Fonda we are excited to work with you. Please
+use the login information below to access the merchant application.
+Please click <a href="{{ data['app_login_url'] }}">HERE </a>to login.
+                                        </span>
+                                        </p>
+                </div>
+{#                <div style="line-height: 160%; text-align: left;margin-top: 10px; word-wrap: break-word;">#}
+{#                    <p style="font-size: 14px; line-height: 160%;"><span#}
+{#                            style="font-size: 18px; line-height: 28.8px;">Your username: <a#}
+{#                            href="#">{{ data['merchent_email'] }}</a> </span></p>#}
+{#                    <p style="font-size: 14px; line-height: 160%;"><span#}
+{#                            style="font-size: 18px; line-height: 28.8px;">Your password: {{ data['password'] }} </span>#}
+{#                    </p>#}
+{#                    <p style="font-size: 14px; line-height: 160%;"><span#}
+{#                            style="font-size: 18px; line-height: 28.8px;">Once you login in you can change the password if you would like. </span>#}
+{#                    </p>#}
+{#                </div>#}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

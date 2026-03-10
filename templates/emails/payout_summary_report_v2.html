@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <title></title>
+    <style>
+        .cta-button:hover {
+            background-color: #F17D08 !important;
+        }
+
+        .im {
+            color: #525252 !important;
+        }
+
+        @media (max-width: 991px) {
+
+            .report-body,
+            .report-header,
+            .report-title,
+            .report-subtitle,
+            .report-content,
+            .data-block,
+            .cta-button,
+            .report-footer,
+            .footer-links,
+            .footer-language,
+            .footer-copyright {
+                max-width: 100%;
+            }
+
+            .logo-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .report-footer {
+                padding: 0 20px;
+            }
+
+            .footer-link {
+                white-space: initial;
+            }
+        }
+    </style>
+</head>
+
+<body data-merchantlan="sp" class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f9f9f9;color: #02274D;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+
+    <div class="weekly-report" style="background-color: #f5f5f5; min-width: 390px; padding: 0 8px; display: table; margin: 0 auto;">
+        <div class="report-body" style="background-color: #fff; box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); width: 600px; padding: 16px 0 0; display: table-cell;">
+            <div class="report-header" style="width: 100%; padding-bottom: 3px; ">
+                <div class="logo-container" style="min-height: 63px; padding: 16px 32px;  text-align: center;">
+                    <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/fonda_logo_emails.png" alt="Company logo" style="aspect-ratio: 4.03; object-fit: contain; object-position: center; width: 125px; max-width: 100%;" width="125">
+                </div>
+                {% if is_schedular %}
+                
+                <h1 class="report-title" style="margin-bottom: 3px; width: 100%; color: #02274D; text-align: center; font: 400 32px Arial, sans-serif;">{{"Payout Summary for" | translate(footer.language) }} {{month_year_str}}</h1>
+                {% else %}
+                
+                <h1 class="report-title" style="margin-bottom: 3px; width: 100%; color: #02274D; text-align: center; font: 400 32px Arial, sans-serif;">{{"Payout Summary" | translate(footer.language) }}</h1>
+                {% endif %}
+            </div>
+            
+            <section class="payment-period" style="color: #02274D; text-align: center; font-family: Arial,
+                -apple-system,
+                Roboto,
+                Helvetica,
+                sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; align-self: center; margin-top: 12px;">
+                <strong>{{report_date_str}}</strong>
+                <br>
+                <span style="margin-top: 8px; display: inline-block;">{{"Here's how much you earned from" | translate(footer.language) }} <strong>{{merchantName}}</strong> {{"this month and how it compares to your previous month's payout." | translate(footer.language) }}</span>
+            </section>
+            </p>
+            <div class="report-content" style="margin-top: 8px; width: 100%; padding: 16px 0 0; display: table;">
+
+                <table style="width: 94%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="padding: 25px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px;">
+                                    <h2 class="data-label" style="color: #02274D; font: 400 16px Arial, sans-serif; margin:0;">{{"Payout Amount" | translate(footer.language) }}</h2>
+                                    <div class="data-value" style="margin-top: 8px;  margin: 0 auto;">
+                                        <div class="data-number" style="color: #02274D; font: 400 24px Arial, sans-serif; display:table-cell; vertical-align: bottom; padding-top: 10px;    padding-right: 8px;">${{ "{:,.2f}".format(report.get('payout_net_earning') |float)}}</div>
+                                        {% if is_schedular %}
+                                            
+                                        <div class="data-percentage" style="color: #02274D; font: 400 14px/1 Arial, sans-serif; display:table-cell; vertical-align: bottom;">
+                                            {% if changeInTotalRevenue < 0 %}
+                                            <span class="percentage-positive" style="color: #fd4140; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/42-512.png" width="19px" style="margin: -2px;" alt=""><span style="margin-top: 3px;">{{"{:,.2f}".format(changeInTotalRevenue|abs)}}%</span></span>
+                                            {% else %}
+                                            <span class="percentage-positive" style="color: #00b800; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/basic-ui-elements-coloricon/21/11-512.png" width="19px" style="margin: -2px;" alt="">
+                                                <span style="margin-top: 3px;">{{"{:,.2f}".format(changeInTotalRevenue|abs)}}%</span>
+                                            </span>
+                                            {% endif %}  
+                                        </div>
+                                        {% endif %}
+
+                                    </div>
+                                    
+                   
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table style="width: 94%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="padding: 16px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px; ">
+                                    <h2 class="data-label" style="color: #02274D; font: 400 16px Arial, sans-serif; margin: 0;">{{"Number of Payouts" | translate(footer.language) }}</h2>
+                                    <table >
+                                        <tr>
+                                            <td class="data-number" style="color: #02274D; font: 400 24px Arial, sans-serif; padding-top: 10px; ">
+                                                {{(report.get('payout_count'))}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+            
+                <section class="spreadsheet-notice" style="margin-top: 8px; width: 100%; padding: 16px 0; font-family: Arial,
+                -apple-system,
+                Roboto,
+                Helvetica,
+                sans-serif; font-size: 16px; color: #02274D; font-weight: 400; text-align: center; line-height: 24px;">
+                  {{"Your full payout details are in the" | translate(footer.language) }}
+                  <br>
+                  <strong>{{"attached spreadsheet" | translate(footer.language) }}</strong>—{{"take a look" | translate(footer.language) }}!
+                </section>
+
+
+                <!-- footer there -->
+
+                <table  style="width: 100%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 24px 32px; background-color: #f5f5f5; color: #525252 !important; font: 400 14px/1 Arial, sans-serif; max-width: 600px;">
+                                <table style="width: 100%; border-spacing: 0;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 12%; padding-bottom: 16px;">
+                                                <div>
+                                                    <a href="{{footer.mifonda_support_number}}" style="text-decoration: none;">
+                                                        <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/phone-icon.png" 
+                                                             alt="company logo" width="29" style="display: block;">
+                                                    </a>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <a href="{{footer.mifonda_support_number}}" style="text-decoration: none; color: #525252;">
+                                                        {{"Contact" | translate(footer.language) }}<br>
+                                                        {{"Support" | translate(footer.language) }}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                            <td style="width: 50%; padding-bottom: 16px;">
+                                                <div>
+                                                    <a href="{{footer.dashboard_merchant_url}}" style="text-decoration: none;">
+                                                        <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/desktop+logo.png" 
+                                                             alt="desktop logo" width="32" style="display: block;">
+                                                    </a>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <a href="{{footer.dashboard_merchant_url}}" style="text-decoration: none; color: #525252;">
+                                                        {{"Merchant" | translate(footer.language) }}<br>
+                                                        {{"Portal" | translate(footer.language) }}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {% if footer.language == "es" %}
+                                    
+                               
+                                <p style="margin-top: 16px;">
+                                    Would you prefer this email in English? <a style=" color: #525252;" href="{{footer.mifonda_support_url}}">Click here</a> to send an email to support.
+                                </p>
+                                    
+                                {% else %}
+                                    
+                                <p style="margin-top: 16px;">
+                                    ¿Prefieres este correo en español? <a style=" color: #525252;" href="{{footer.mifonda_support_url}}">Haz clic aquí</a> para enviar un correo a soporte.
+                                </p>
+                                {% endif %}
+                                <p style="margin-top: 16px; color: #525252;">
+                                    © {{footer.current_year}} Fonda Technologies Inc. {{"All Rights Reserved" | translate(footer.language) }}
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+
+</html>

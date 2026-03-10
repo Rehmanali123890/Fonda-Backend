@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            margin: 15px auto;
+            padding: 0;
+            width: 70%;
+            background-color: #fff;
+            font-family: 'Roboto Slab', serif;
+        {#border: 2px solid #00a79d;#} overflow: hidden;
+                         scroll-behavior: unset;
+
+        }
+
+        html {
+            background: #dfdfdf;
+            width: 100%;
+                         scroll-behavior: unset;
+
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1em;
+        }
+
+        #print-area {
+            position: relative;
+            padding: 0em 3em;
+            width: 90%;
+
+                         scroll-behavior: unset;
+{#overflow-x: hidden;#}
+        }
+
+        .address {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .addons-list li {
+            list-style: disc;
+            color: rgb(66, 36, 36);
+            font-size: 15px;
+        }
+
+        .price {
+            color: #00a79d;
+        }
+
+        .menu-list {
+            display: flex;
+            justify-content: space-between;
+            padding: .2em 0em;
+            font-size: 20px;
+        }
+
+        .addons {
+            font-size: 18px;
+            list-style: none;
+            color: #ef4223;
+        }
+
+
+        .content {
+            margin-bottom: 1em;
+        }
+
+        h4 {
+            color: #00a79d;
+        }
+
+        h3 {
+            font-size: 25px;
+            color: #00a79d;
+        }
+
+        .addons-items-div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .MenuItem {
+            width: 80%;
+            list-style: none;
+        }
+
+        .MenuItem:after {
+            content: "";
+            display: block;
+            border-bottom: 2px dotted #00a79d;
+            position: relative;
+            z-index: 1;
+            margin-right: 9em;
+        }
+
+        @media screen and (max-width: 990px) {
+            body {
+                width: 80%;
+            }
+
+            .MenuItem:after {
+                margin-right: 1em;
+            }
+
+            .MenuItem {
+                width: 100%;
+                list-style: none;
+            }
+
+        }
+
+        @media screen and (max-width: 630px) {
+            body {
+                width: 100%;
+            }
+
+            ul {
+                margin-right: 1em;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .lines {
+                display: none;
+            }
+
+            body {
+                height: auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+<div style="display:block; clear:both; page-break-after:always;" id="print-area">
+    <div class="header" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
+              <img src="https://apptopus-data-prod.s3.us-west-1.amazonaws.com/fonda-logos/logo.svg" height="120px" alt="" />
+    </div>
+    <div id="content">
+        <div class="address">
+            <h3>{{ resp['name'] }}</h3>
+        </div>
+        <hr>
+        {% for dd in resp['data'] %}
+            {% for d in dd %}
+                <h3>{{ d['name'] }}</h3>
+                <ul>
+                    {% for a in d['items'] %}
+                        <li class="menu-list">
+                            <span style="float:left">{{ a['name'] }} </span>
+                            <br><span style="float:left"> {{ a['description'] }}</span>
+                            <br><span style="float: right">${{ a['price'] }}</span>
+                        </li>
+                        <!-- ==============addons list -->
+                        {% for aa in a['addon'] %}
+                            <li class="addons">
+                                {{ aa['name'] }}
+                            </li>
+
+                            <ul  >
+                            {% for o in aa['options'] %}
+                                    <li>
+                                        <span > {{ o['addonOptionName'] }}</span>
+                                    <span style="float: right"  class="price">${{ o['addonOptionPrice'] }}</span>
+                                    </li>
+
+                            {% endfor %}
+                            </ul>
+                        {% endfor %}
+
+                    {% endfor %}
+                 </ul>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+</body>
+
+</html>

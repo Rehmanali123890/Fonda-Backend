@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="x-apple-disable-message-reformatting">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<![endif]-->
+    <title></title>
+    <style>
+        .cta-button:hover{
+          background-color: #F17D08 !important;
+        }
+        .im{
+            color: #525252 !important;
+        }
+        @media (max-width: 991px) {
+
+            .report-body,
+            .report-header,
+            .report-title,
+            .report-subtitle,
+            .report-content,
+            .data-block,
+            .cta-button,
+            .report-footer,
+            .footer-links,
+            .footer-language,
+            .footer-copyright {
+                max-width: 100%;
+            }
+
+            .logo-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            .report-footer {
+                padding: 0 20px;
+            }
+
+            .footer-link {
+                white-space: initial;
+            }
+        }
+    </style>
+</head>
+
+<body data-merchantlan="sp" class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f9f9f9;color: #000000;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+
+    <div class="weekly-report" style="background-color: #f5f5f5; min-width: 390px; padding: 0 8px; display: table; margin: 0 auto;">
+        <div class="report-body" style="background-color: #fff; box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); width: 600px; padding: 16px 0 0; display: table-cell;">
+            <div class="report-header" style="width: 100%; padding-bottom: 16px; ">
+                <div class="logo-container" style="min-height: 63px; padding: 16px 32px;  text-align: center;">
+                    <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/fonda_logo_emails.png" alt="Company logo" style="aspect-ratio: 4.03; object-fit: contain; object-position: center; width: 125px; max-width: 100%;" width="125">
+                </div>
+                <h1 class="report-title" style="margin-top: 8px; width: 100%; color: #000; text-align: center; font: 400 32px Arial, sans-serif;"> {{ "Weekly Performance Report" | translate(data.language) }}</h1>
+            </div>
+            <p class="report-subtitle" style="margin-top: 8px; width: 100%; color: #000; text-align: center; font: 400 16px/24px Arial, sans-serif;">
+                <strong>{{data.startDate}} - {{data.endDate}}</strong>
+                <br>
+                {{"Here's how" | translate(data.language) }} {{data.mname}} {{"performed compared to the previous week" | translate(data.language)}}
+            </p>
+            <div class="report-content" style="margin-top: 8px; width: 100%; padding: 16px 0 0; display: table;">
+
+                <table style="width: 94%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="padding: 25px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px;">
+                                    <h2 class="data-label" style="color: #000; font: 400 16px Arial, sans-serif; margin:0;">{{"Total Orders"  | translate(data.language) }}</h2>
+                                    <div class="data-value" style="margin-top: 8px;  margin: 0 auto;">
+                                        <div class="data-number" style="color: #000; font: 400 24px Arial, sans-serif; display:table-cell; vertical-align: bottom; padding-top: 10px;    padding-right: 8px;">{{data.completedOrders}}</div>
+                                        <div class="data-percentage" style="color: #000100; font: 400 14px/1 Arial, sans-serif; display:table-cell; vertical-align: bottom;">
+                                            {% if data.changeInCompletedOrders < 0 %}
+                                            <span class="percentage-positive" style="color: #fd4140; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/42-512.png" width="19px" style="margin: -2px;" alt=""><span style="margin-top: 3px;">{{data.changeInTotalRevenue|abs}}%</span></span>
+                                            {% else %}
+                                            <span class="percentage-positive" style="color: #00b800; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/basic-ui-elements-coloricon/21/11-512.png" width="19px" style="margin: -2px;" alt="">
+                                                <span style="margin-top: 3px;">{{data.changeInCompletedOrders|abs}}%</span>
+                                            </span>
+                                            {% endif %}  
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div style="padding: 25px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px;">
+                                    <h2 class="data-label" style="color: #000; font: 400 16px Arial, sans-serif; margin:0;">{{"Total Revenue" | translate(data.language) }}</h2>
+                                    <div class="data-value" style="margin-top: 8px;  margin: 0 auto;">
+                                        <div class="data-number" style="color: #000; font: 400 24px Arial, sans-serif; display:table-cell; vertical-align: bottom; padding-top: 10px;    padding-right: 8px;">${{ "{:,.2f}".format(data.totalRevenue)}}</div>
+                                        <div class="data-percentage" style="color: #000100; font: 400 14px/1 Arial, sans-serif; display:table-cell; vertical-align: bottom;">
+                                            {% if data.changeInTotalRevenue < 0 %}
+                                            <span class="percentage-positive" style="color: #fd4140; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/42-512.png" width="19px" style="margin: -2px;" alt=""><span style="margin-top: 3px;">{{data.changeInTotalRevenue|abs}}%</span></span>
+                                            {% else %}
+                                            <span class="percentage-positive" style="color: #00b800; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/basic-ui-elements-coloricon/21/11-512.png" width="19px" style="margin: -2px;" alt="">
+                                                <span style="margin-top: 3px;">{{data.changeInTotalRevenue|abs}}%</span>
+                                            </span>
+                                            {% endif %}  
+                                        </div>
+                                    </div>
+                                    
+                   
+                                    
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div style="padding: 25px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px;">
+                                    <h2 class="data-label" style="color: #000; font: 400 16px Arial, sans-serif; margin:0;">{{"Average Order Size" | translate(data.language) }}</h2>
+                                    <div class="data-value" style="margin-top: 8px;  margin: 0 auto;">
+                                        <div class="data-number" style="color: #000; font: 400 24px Arial, sans-serif; display:table-cell; vertical-align: bottom; padding-top: 10px;    padding-right: 8px;">${{"%.2f"|format(data.averageOrderSize)}}</div>
+                                        <div class="data-percentage" style="color: #000100; font: 400 14px/1 Arial, sans-serif; display:table-cell; vertical-align: bottom;">
+                                            {% if data.changeInAverageOrderSize < 0 %}
+                                            <span class="percentage-positive" style="color: #fd4140; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/42-512.png" width="19px" style="margin: -2px;" alt=""><span style="margin-top: 3px;">{{data.changeInAverageOrderSize|abs}}%</span></span>
+                                            {% else %}
+                                            <span class="percentage-positive" style="color: #00b800; display: flex;"><img src="https://cdn1.iconfinder.com/data/icons/basic-ui-elements-coloricon/21/11-512.png" width="19px" style="margin: -2px;" alt="">
+                                                <span style="margin-top: 3px;">{{data.changeInAverageOrderSize|abs}}%</span>
+                                            </span>
+                                            {% endif %}  
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div style="padding: 25px; border-radius: 8px; background-color: #f9f7f5; display: block; margin-bottom: 16px;">
+                                    <h2 class="data-label" style="color: #000; font: 400 16px Arial, sans-serif; margin:0;">{{"Tablet Downtime" | translate(data.language) }}</h2>
+                                    <div class="data-value" style="margin-top: 8px;  margin: 0 auto;">
+                                        {% if data.totalDowntime == 0 %}
+                                         <div class="data-number" style="color: #000; font: 400 24px Arial, sans-serif; display:table-cell; vertical-align: bottom; padding-top: 10px;    padding-right: 8px;">{{"%.2f"|format(data.totalDowntime)}}%</div>
+                                            
+                                        {% else %}
+                                            <div class="data-number" style="color: #000; font: 400 24px Arial, sans-serif; display:table-cell; vertical-align: bottom; padding-top: 10px;  padding-right: 8px;">{{"%.2f"|format(data.totalDowntime)}}% <span style="font-size: 20px;">({{data.current_formated_downtime}})</span></div>
+                                            
+                                        {% endif %}
+                                        
+                                        {% if data.changetotalDowntime != 0 %}
+                                            
+                                       
+                                            <div class="data-percentage" style="color: #000100; font: 400 14px/1 Arial, sans-serif; display:table-cell; vertical-align: bottom;">
+                                                {% if data.changetotalDowntime < 0 %}
+                                                <span class="percentage-positive" style="color: #00b800;  display: flex;"><img src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/green+icon_opposite.png" width="19px" style=" margin: -2px;" alt=""><span style="margin-top: 3px;">{{data.changetotalDowntimeFormat}}</span></span>
+                                                
+                                                </span>
+                                                {% else %}
+                                                <span class="percentage-positive" style="color: #fd4140; display: flex;"><img src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/red_icon_opposite.png" width="19px" style=" margin: -2px;" alt="">
+                                                    <span style="margin-top: 3px;">{{data.changetotalDowntimeFormat}}</span>
+
+                                            
+                                                {% endif %}  
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+
+                <a href="{{data.dashboard_merchant_url}}" class="cta-button"
+                style="cursor: pointer !important; border-radius: 80px; background-color: #ffa230;
+                display: block; width: 93%; margin: 16px auto 24px; 
+                color: #FFFFFF; font: 700 16px Arial, sans-serif; border: none; 
+                text-decoration: none; text-align: center; padding: 15px 0;">
+                {{"View more insights" | translate(data.language) }}
+            </a>
+            
+                
+                
+                <table  style="width: 100%; border-collapse: collapse; margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 24px 32px; background-color: #f5f5f5; color: #525252 !important; font: 400 14px/1 Arial, sans-serif; max-width: 600px;">
+                                <table style="width: 100%; border-spacing: 0;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 12%; padding-bottom: 16px;">
+                                                <div>
+                                                    <a href="{{data.mifonda_support_number}}" style="text-decoration: none;">
+                                                        <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/phone-icon.png" 
+                                                             alt="company logo" width="29" style="display: block;">
+                                                    </a>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <a href="{{data.mifonda_support_number}}" style="text-decoration: none; color: #525252;">
+                                                        {{"Contact" | translate(data.language) }}<br>
+                                                        {{"Support" | translate(data.language) }}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                            <td style="width: 50%; padding-bottom: 16px;">
+                                                <div>
+                                                    <a href="{{data.dashboard_merchant_url}}" style="text-decoration: none;">
+                                                        <img loading="lazy" src="https://apptopus-data-test.s3.us-east-2.amazonaws.com/images/desktop+logo.png" 
+                                                             alt="desktop logo" width="32" style="display: block;">
+                                                    </a>
+                                                </div>
+                                                <div style="margin-top: 8px;">
+                                                    <a href="{{data.dashboard_merchant_url}}" style="text-decoration: none; color: #525252;">
+                                                        {{"Merchant" | translate(data.language) }}<br>
+                                                        {{"Portal" | translate(data.language) }}
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {% if data.language == "es" %}
+                                    
+                               
+                                <p style="margin-top: 16px;">
+                                    Would you prefer this email in English? <a style=" color: #525252;" href="{{data.mifonda_support_url}}">Click here</a> to send an email to support.
+                                </p>
+                                    
+                                {% else %}
+                                    
+                                <p style="margin-top: 16px;">
+                                    ¿Prefieres este correo en español? <a style=" color: #525252;" href="{{data.mifonda_support_url}}">Haz clic aquí</a> para enviar un correo a soporte.
+                                </p>
+                                {% endif %}
+                                <p style="margin-top: 16px; color: #525252;">
+                                    © {{data.current_year}} Fonda Technologies Inc. {{"All Rights Reserved" | translate(data.language) }}
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    
+</body>
+
+
+
+</html>
