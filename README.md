@@ -55,20 +55,7 @@ Data visualization
 One consolidated payout system
 Automated reconciliation
 Reduced operational overhead
-🏗️ System Architecture
-            Delivery Platforms
-    (Uber Eats | DoorDash | Grubhub)
-                    ↓
-              Fonda Backend
-        (Flask API + Microservices)
-                    ↓
-    ┌──────────────┼──────────────┐
-    ↓              ↓              ↓
-  POS           Payments     Communication
-(Square)        (Stripe)       (Twilio)
-                    ↓
-                AWS Cloud
-   (RDS | S3 | SNS | SQS | Lambda | ECS)
+
 ⚙️ Tech Stack
 🧠 Backend
 Python (Flask)
