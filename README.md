@@ -1,4 +1,4 @@
-Fonda Backend
+🚀 Fonda Backend
 
 Fonda is a unified backend platform that integrates multiple food delivery services and POS systems into a single, centralized system. It allows merchants to manage orders, payments, analytics, and operations without switching between different apps.
 
